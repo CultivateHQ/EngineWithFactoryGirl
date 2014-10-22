@@ -1,5 +1,10 @@
 module EngineSetupTest
   class Engine < ::Rails::Engine
     isolate_namespace EngineSetupTest
+
+    config.generators do |g|
+      g.test_framework      :rspec,        :fixture => false
+      g.fixture_replacement :factory_girl
+    end
   end
 end
